@@ -1,0 +1,5 @@
+# foldery
+.idea/
+__pycache__/
+check/
+.git/
