@@ -14,6 +14,11 @@
 - **compare_models.ipynb**: Porównanie czasu działania modeli
 - **main.py** - Testowanie modelów w czasie rzeczywistym
 
+- **game_menu.py** - Wyświetlenie rankingu najlepszych graczy, możliwośc wpisania własnego imienia oraz pokazanie się okna gry.
+Należy w terminal wpisać komendę: 
+
+streamlit run game_menu.py
+
 
 ## Przegląd Projektu
 
@@ -38,11 +43,13 @@ przy pomocy pytorch.save
 - **data_visualisation.ipynb**: Wizualizuje dane, pokazuje efekt różnych filtrów i sprawdza, czy klasy są zbalansowane.
 - **deep_learning.ipynb**: Przetwarza dane dla CNN, wizualizuje proces uczenia się i porównuje różne CNN oraz filtry na danych.
 - **detect_hand_cnn.py**: Używa CNN do wykrywania kluczowych punktów w celu wycięcia dłoni ze zdjęć.
+- **game_menu.py** - Wyświetlenie rankingu najlepszych graczy, możliwośc wpisania własnego imienia oraz pokazanie się okna gry.
 - **get_rectangle.ipynb**: Pokazuje, jak model nauczył się wycinać dłonie ze zdjęć.
 - **hand_func.py**: Funkcje używające MediaPipe do znajdywania landmarków dłoni.
 - **main.py**: Wywołanie wskazanych funkcji w czasie rzeczywistym.
 - **machine_learning.ipynb**: Znajduje cechy, przetwarza dane, determinuje najlepszy algorytm i hiperparametry oraz wizualizuje wyniki.
 - **model_prediction.py**: Funkcje umożliwiające predykowanie wyników przy użyciu istniejących modeli i wizualizujące ich wydajność.
+- **scores.pkl**: Plik zapisujący najlepszych graczy.
 - **tensor_data.py**: Dostosowuje format danych do tensorów i dataloaderów, aby umożliwić efektywne trenowanie modelu.
 - **data.csv, data_normalized.csv, selected_features.csv**, **output.xlsx**: Plik wynikowy zawierający wstępnie zapisane dane.
 

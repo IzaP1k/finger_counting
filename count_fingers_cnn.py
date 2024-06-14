@@ -80,6 +80,44 @@ class Simple_CNN(nn.Module):
     def forward(self, X):
         return self.seq_nn(X)
 
+class Rectangled_CNN(nn.Module):
+    """
+    Function which creates a CNN with specified input dimensions and output dimensions.
+    input = 1
+    output = 4
+
+    480, 640
+    """
+    def __init__(self):
+        super().__init__()
+        self.network = nn.Sequential(
+
+            nn.Conv2d(1, 16, kernel_size=2, padding=1),
+            nn.BatchNorm2d(16),
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2),  # 16 X 240 X 320
+
+            nn.Conv2d(16, 32, kernel_size=2, stride=1, padding=1),
+            nn.BatchNorm2d(32),
+            nn.ReLU(),
+            nn.MaxPool2d(2, 2),  # 32 X 120 X 160
+
+            nn.Conv2d(32, 64, kernel_size=2, stride=1, padding=1),
+            nn.BatchNorm2d(64),
+            nn.ReLU(),
+            nn.MaxPool2d(10, 10),  # 64 X 12 X 16
+
+            nn.Flatten(),
+            nn.Dropout(0.3),
+            nn.ReLU(),
+            nn.Linear(64 * 12 * 16, 64),
+            nn.ReLU(),
+            nn.Linear(64, 4),
+            nn.Softmax())
+
+    def forward(self, xb):
+        return self.network(xb)
+
 
 class Advanced_CNN(nn.Module):
     """

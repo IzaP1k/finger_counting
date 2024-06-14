@@ -18,7 +18,7 @@ time_step = 200
 
 def snake_game(WINDOW, TITLE_SIZE, length, time_step, model_path="SVC()-model.joblib"):
 
-    
+    results = []
 
     RANGE = (TITLE_SIZE // 2, WINDOW - TITLE_SIZE)
     get_random_position_snake = lambda: [randrange(TITLE_SIZE, WINDOW - TITLE_SIZE), randrange(TITLE_SIZE, WINDOW - TITLE_SIZE)]
@@ -74,7 +74,8 @@ def snake_game(WINDOW, TITLE_SIZE, length, time_step, model_path="SVC()-model.jo
                 cap.release()
                 cv2.destroyAllWindows()
                 pygame.quit()
-                exit()
+
+                return results
 
         if most_common_prediction is not None:
             if most_common_prediction == 1:
@@ -88,11 +89,11 @@ def snake_game(WINDOW, TITLE_SIZE, length, time_step, model_path="SVC()-model.jo
 
         screen.fill('black')
 
-        # Draw dividing line
         pygame.draw.line(screen, (255, 255, 255), (WINDOW, 0), (WINDOW, WINDOW), 2)
 
         self_eating = pygame.Rect.collidelist(snake, segments[:-1]) != -1
         if snake.left < 0 or snake.right > WINDOW or snake.top < 0 or snake.bottom > WINDOW or self_eating:
+            results.append(length)
             display_text(f"Game Over\nScore: {length}", (WINDOW // 2 - 100, WINDOW // 2 - 50))
             pygame.display.flip()
             pygame.time.wait(3000)
@@ -125,5 +126,5 @@ def snake_game(WINDOW, TITLE_SIZE, length, time_step, model_path="SVC()-model.jo
         pygame.display.flip()
         clock.tick(60)
 
-# Uruchomienie gry Snake
-snake_game(WINDOW, TITLE_SIZE, length, time_step)
+
+# snake_game(WINDOW, TITLE_SIZE, length, time_step)
