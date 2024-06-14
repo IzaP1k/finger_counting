@@ -15,9 +15,11 @@
 - **main.py** - Testowanie modelów w czasie rzeczywistym
 
 - **game_menu.py** - Wyświetlenie rankingu najlepszych graczy, możliwośc wpisania własnego imienia oraz pokazanie się okna gry.
-Należy w terminal wpisać komendę: 
 
+Należy w terminal wpisać komendę: 
+''
 streamlit run game_menu.py
+''
 
 
 ## Przegląd Projektu
